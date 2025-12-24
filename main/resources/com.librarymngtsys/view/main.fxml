@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.librarymngtsys.ui.controller.MainController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <HBox spacing="10" alignment="TOP_RIGHT" >
+            <ToggleButton fx:id="cancelButton" text="Cancel"  ></ToggleButton>
+            <ToggleButton fx:id="editButton" text="Edit" onAction="#onEdit" ></ToggleButton>
+            <Button fx:id="deleteButton" text="Delete" onAction="#onDelete"/>
+        </HBox>
+    </top>
+
+<left>
+    <VBox spacing="10" alignment="TOP_LEFT" >
+      <Label text="Book Information" style="-fx-font-size: 15px;"/>
+        <TabPane fx:id="tabPane">
+            <VBox.margin>
+                <Insets top="0" right="0" bottom="0" left="5"/>
+            </VBox.margin>
+            <tabs>
+                <Tab text="Book">
+                    <content>
+                        <fx:include fx:id="bookView" source="/com.librarymngtsys/view/book.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Author" >
+                    <content>
+                        <fx:include fx:id="authorView" source="/com.librarymngtsys/view/author.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Publisher">
+                    <content>
+                        <fx:include fx:id="publisherView" source="/com.librarymngtsys/view/publisher.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Search">
+                    <content>
+                        <fx:include fx:id="searchView" source="/com.librarymngtsys/view/search.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+
+        <VBox spacing="5" alignment="CENTER" >
+            <Button fx:id="addButton" text="Add" onAction="#handleAllSave"></Button>
+            <Button fx:id="updateButton" text="Submit"  onAction="#onUpdate"></Button>
+            <Button fx:id="searchButton" text="Search" onAction="#onSearch"></Button>
+        </VBox>
+    </VBox>
+</left>
+    <center>
+        <TableView fx:id="tableView">
+            <columns >
+                <TableColumn fx:id="authorNameCol" text="Author" prefWidth="100"/>
+                <TableColumn fx:id="authorBirthYearCol" text="Birth Year" prefWidth="70"/>
+                <TableColumn fx:id="publishedYearCol" text="Published Year" prefWidth="80"/>
+                <TableColumn fx:id="titleCol" text="Title" prefWidth="70"/>
+                <TableColumn fx:id="genreCol" text="Genre" prefWidth="100"/>
+                <TableColumn fx:id="publisherNameCol" text="Publisher" prefWidth="100"/>
+                <TableColumn fx:id="countryCol" text="Country" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

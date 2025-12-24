@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.librarymngtsys.ui.controller.PublisherController"
+      spacing="10" alignment="CENTER" >
+
+
+    <TextField fx:id="publisherNameField"
+               prefWidth="250" maxWidth="300"
+               style="-fx-font-size: 14px; "
+               promptText="Publisher name">
+    </TextField>
+
+    <TextField fx:id="countryField"
+               prefWidth="250" maxWidth="300"
+               style="-fx-font-size: 14px; "
+               promptText="Country">
+    </TextField>
+
+</VBox>

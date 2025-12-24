@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.librarymngtsys.ui.controller.BookController"
+      spacing="10" alignment="CENTER" >
+
+
+    <TextField fx:id="titleField"
+               prefWidth="250"
+               maxWidth="300" style="-fx-font-size: 14px; "
+               promptText="Book title">
+    </TextField>
+
+    <TextField fx:id="genreField"
+               prefWidth="250"
+               maxWidth="300"
+               style="-fx-font-size: 14px; "
+               promptText="Genre">
+    </TextField>
+
+    <TextField fx:id="publishedYearField"
+               prefWidth="250"
+               maxWidth="300"
+               style="-fx-font-size: 14px; "
+               promptText="Published year (e.g. 2021)">
+    </TextField>
+
+</VBox>
